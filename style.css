@@ -1,5 +1,166 @@
+/* add fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap');
+/* all class using same dataset*/
+:root{
+  /*define variables*/
+  --accent: #FD6B6B;/*Button color from figma*/
+  --accentHover: #fd9c9c;/*mouse hover light*/
+  --dark60: rgba(68, 90, 139, 0.6); /*0.6=60%*/
+  --light:#ffffff;
+  ---transition: all 0.3s ease 0s; /*transition for hover effects*/
+}
+/*all section*/
 *{
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body{
+  height: 100%;
+  overflow: auto;
+}
+body{
+  background: linear-gradient( var(--dark60), var(--dark60)), url(./img/background.png);
+  background-position: center;
+  background-size: cover;
+}
+a, button, p{
+  font-family: 'Noto Sans Lao', sans-serif;
+  color: var(--light);
+}
+a, button, .logo{
+  cursor: pointer;
+}
+main{
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px)) minmax(60px, 1fr);
+}
+header{
+  grid-column: 1 /span 7;
+  margin-left: 5px;
+}
+nav{
+  display: flex;
+  align-items: center;
+  height: 150px;
+}
+.links{
+  margin-left: auto;
+}
+.links a{
+  margin-right: 20px;
+}
+.links a, .links button{
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: var(---transition);
+}
+.links a:hover{
+  color: var(--accentHover);
+}
+.button-med{
+  border: none;
+  background-color: var(--accent);
+  padding: 8px 25px;
+  transition: var(---transition);
+}
+.button-med:hover{
+  background-color: var(--accentHover);
+}
+.info{
+  grid-column: 3 /span 4;
+  margin-top: 10%;
+  text-align: center;
+}
+.content-font1{
+  font-family: 'Noto Sans Lao', sans-serif;
+  color: black;
+  font-size: 3.5rem;
+}
+.content-font2{
+  font-family: 'Noto Sans Lao', sans-serif;
+  color: var(--light);
+  font-size: 1.5rem;
+}
+.icons{
+  margin-top: 10%;
+  display: flex;
+}
+.icon{
+  margin-right: 30px;
+}
+.icon img{
+  width: 60px;
+  height: 60px;
+}
+.icon-info{
+  text-align: center;
+}
+.features{
+  grid-column: 2 /span 7;
+  background-color: #EBFF00;
+  margin-top: 6%;
+  padding: 30px 0px 0px 20px;
+  display: flex;
+  align-items: left;
+}
+.feature{
+  display: flex;
+  /* top right bottom left*/
+  margin: 0px 10px 30px 10px;
+}
+.feature img{
+  width: 160px;
+  height: 80px;
+  margin-right: 20px;
+}
+.feature-info p{
+  color: black;
+}
+.feature-top, .feature-more{
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.feature-bottom{
+  font-size: 15px;
+  font-weight: normal;
+}
+.feature:nth-child(3){
+  align-self: flex-start;
+}
+.feature-more{
+  cursor: pointer;
+  transition: var(---transition);
+}
+.feature-more:hover{
+  color: var(--accentHover);
+}
+@media only screen and (max-width:1100px) {
+  .icon img{
+    width: auto;
+    height: 100px;
+  }
+  .content-font1, .content-font2{
+    font-size: 2.75rem;
+  }
+  .feature {
+    grid-column: 1/ span 7;
+  }
+}
+@media only screen and (max-width:850px){
+  .info{
+    grid-column: 2 / span 7;
+  }
+  .icons{
+    flex-direction: column;
+  }
+  .content-font1, .content-font2{
+    font-size: 1.75rem;
+  }
+  .feature{
+    flex-direction: column;
+  }
 }
